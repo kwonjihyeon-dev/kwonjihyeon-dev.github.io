@@ -1,17 +1,14 @@
 import { IIntroduce } from '../component/introduce/IIntroduce';
-import { lastestUpdatedAt } from '../package.json';
 
 const introduce: IIntroduce.Payload = {
   disable: false,
 
   contents: [
-    'As the cherished emblem of the Linux kernel, I have become synonymous with open-source philosophy and the free software movement worldwide. My career began in the icebergs of development, where the seeds of my fascination with operating systems first sprouted. From a mere hatchling in the vast sea of code, I quickly ascended to become a pivotal figure in the Linux community. My journey has been marked by relentless dedication to system integrity, scalability, and robustness. Under my vigilant watch, countless servers have achieved unparalleled uptimes, and systems have been optimized to run like the well-oiled machines they are intended to be.',
-    'In the world of zeros and ones, my expertise has been instrumental in pioneering advancements in Linux system engineering. My flippers have crafted meticulous kernel enhancements, each aimed at streamlining performance and bolstering security across distributed networks. I am known in the community for my ability to dive deep into complex codebases and emerge with pearls of innovation that drive the collective progress of Linux environments. Advocacy is also a part of my plumage – spreading the word about the virtues of open-source and encouraging the adoption of Linux, from personal desktops to corporate data centers. As a mentor, I have nurtured the growth of young hatchlings into seasoned professionals, contributing to the diversity and vitality of our ecosystem.',
+    '사용자가 기다리는 1초를 줄이는 일이 서비스의 성과로 이어진다고 믿는 5년차 프론트엔드 엔지니어입니다.',
+    'Next.js SSR/RSC로 마이그레이션하여 Lighthouse로 측정 및 검증한 결과, LCP를 3.1초에서 1초로 줄여 초기 진입 속도를 개선했습니다. iOS WebView에서만 발생하던 렌더링 이슈를 추적해 WebKit의 바이트 제한이 원인임을 밝혔고, 퍼널 이동 시 입력값이 사라지던 문제 역시 분산돼 있던 IndexedDB 로직을 단일 Class로 응집해 제거했습니다.',
+    '사용자가 겪는 문제를 좇다 보니, 팀 내부의 비효율도 개선 대상으로 삼았습니다. 팝업을 바꿀 때마다 필요하던 배포를 서버 설정만으로 대응할 수 있도록 대체했고, 디자인 토큰을 자동화해 여러 프로젝트가 동일한 기준을 공유하도록 만들었습니다.',
+    '기능 구현을 넘어 화면 뒤의 견고한 구조를 고민하고 지표 중심의 개선을 리드하는 것, 제가 추구하는 프론트엔드 엔지니어의 핵심 가치입니다.',
   ],
-  sign: 'Tux',
-  // sign: packageJson.author.name,
-  // latestUpdated: '2019-07-24',
-  latestUpdated: lastestUpdatedAt,
 };
 
 export default introduce;

@@ -36,7 +36,7 @@ function getFormattingDuration(from: DateTime, to: DateTime = DateTime.local()) 
 }
 
 function debug(channel: string) {
-  return _debug(`yosume:${channel}`);
+  return _debug(`resume:${channel}`);
 }
 
 const Util = {

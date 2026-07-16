@@ -18,6 +18,13 @@ export declare namespace IProject {
     /** ### 프로젝트 제목 */
     title: string;
 
+    /**
+     * ### 프로젝트 저장소/링크 (GitHub 등)
+     *
+     * @description 값이 존재하면 `title` 옆에 GitHub 아이콘 링크가 표시된다.
+     */
+    link?: string;
+
     /** ### 어디서 수행했는지 (or subtitle) */
     where: string;
 

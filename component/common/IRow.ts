@@ -11,6 +11,12 @@ export declare namespace IRow {
 
   export interface Right {
     title?: string;
+    /**
+     * ### title 옆에 붙는 저장소/링크 (GitHub 등)
+     *
+     * @description `undefined` 가 아닐 경우 `title` 옆에 GitHub 아이콘 링크가 붙는다.
+     */
+    link?: string;
     subTitle?: string;
     descriptions?: Description[];
   }

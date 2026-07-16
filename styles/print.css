@@ -1,0 +1,29 @@
+/**
+ * 인쇄 전용 스타일
+ *
+ * 종이(A4) 콘텐츠 폭이 Bootstrap md breakpoint(768px)보다 작아,
+ * 인쇄 시 md 2단 레이아웃이 모바일(sm=12) 세로 배치로 무너지는 문제를 보정한다.
+ */
+@media print {
+  @page {
+    margin: 12mm;
+  }
+
+  /* 인쇄 시에도 md 2단 그리드 유지 */
+  .col-md-3 {
+    flex: 0 0 25% !important;
+    max-width: 25% !important;
+  }
+  .col-md-9 {
+    flex: 0 0 75% !important;
+    max-width: 75% !important;
+  }
+
+  /* md 정렬 유틸리티 유지 */
+  .text-md-right {
+    text-align: right !important;
+  }
+  .text-md-left {
+    text-align: left !important;
+  }
+}
