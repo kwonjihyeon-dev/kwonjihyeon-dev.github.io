@@ -21,15 +21,6 @@ export declare namespace IRow {
     descriptions?: Description[];
   }
 
-  /**
-   * ### Sample 1
-   *
-   * ![image](https://user-images.githubusercontent.com/8033320/78037377-6d13c900-73a6-11ea-97d1-549755b7d394.png)
-   *
-   * ### Sample 2
-   *
-   * ![image](https://user-images.githubusercontent.com/8033320/78037317-55d4db80-73a6-11ea-833b-b8577d20cdcc.png)
-   */
   export interface Description {
     /** ### 설명 본문 */
     content: string;
@@ -39,7 +30,6 @@ export declare namespace IRow {
      *
      * @default 'DEFAULT'
      * @description Pretendard 에서 font-weight 300 을 DEFAULT 로 사용하고 있다.
-     * @see https://github.com/uyu423/resume-nextjs/blob/master/component/common/CommonRow.tsx
      */
     weight?: FontWeightType;
 

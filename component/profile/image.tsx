@@ -7,8 +7,8 @@ export default function ProfileImage({ src }: PropsWithChildren<{ src: string }>
         src={src}
         alt="Profile"
         style={{
-          width: '220px',
-          height: '220px',
+          width: '180px',
+          height: '180px',
           maxWidth: '100%',
           objectFit: 'cover',
           objectPosition: 'top',
