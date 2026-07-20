@@ -3,7 +3,18 @@ import { PropsWithChildren } from 'react';
 export default function ProfileImage({ src }: PropsWithChildren<{ src: string }>) {
   return (
     <div className="pb-3 text-md-right text-center">
-      <img style={{ maxHeight: '320px' }} className="img-fluid rounded" src={src} alt="Profile" />
+      <img
+        src={src}
+        alt="Profile"
+        style={{
+          width: '220px',
+          height: '220px',
+          maxWidth: '100%',
+          objectFit: 'cover',
+          objectPosition: 'top',
+          borderRadius: '50%',
+        }}
+      />
     </div>
   );
 }

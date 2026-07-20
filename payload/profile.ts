@@ -2,11 +2,10 @@ import { faBlog, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 import { IProfile } from '../component/profile/IProfile';
-import image from '../asset/profile.png';
+import image from '../asset/profile.jpg';
 
 const profile: IProfile.Payload = {
   disable: false,
-
   image,
   name: {
     title: '권지현',
