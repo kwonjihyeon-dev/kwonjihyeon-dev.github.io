@@ -9,6 +9,18 @@ const experience: IExperience.Payload = {
       startedAt: '2023-10',
       positions: [
         {
+          title:
+            '중개사 광고 전송 페이지 점진 마이그레이션(PHP/Laravel → Next.js) 및 QA 자동화 도입',
+          subtitle:
+            '중개사가 매물 광고를 위해 광고 상품을 선택해 내 · 외부 채널로 전송하는 페이지 개편 및 테스트 자동화',
+          descriptions: [
+            '서버 인증 · 데이터 조회 · HTML 생성 후 JS 로드까지 기다려야 하는 레거시(PHP/Laravel) 페이지를 신규 Next.js(SSR/RSC)로 이관 → **TTFB 950ms → 200ms(-79%), LCP 3.5s → 2.3s, 용량 4.1MB → 1.7MB(-59%)** 개선',
+            '기능을 바꿀 때마다 기존 동작이 깨지거나 운영 CS가 인입되던 문제를 방지하고자 핵심 플로우(매물 등록 · 광고 전송)를 매일 자동 검증하는 Playwright 기반 E2E 환경을 구축',
+            '광고 전송 시 사용자가 입력하는 조건들의 조합을 E2E만으로는 모두 검증할 수 없어, **단위 · 통합 테스트(Vitest, 179케이스)를 설계 · 작성**해 정책 변경 시 회귀를 코드 레벨에서 방어',
+          ],
+          skill: ['Next.js', 'TypeScript', 'Playwright', 'Vitest'],
+        },
+        {
           title: '중개사 전용 관리 대시보드(B2B) 홈 개편 · Next.js SSR/RSC 마이그레이션',
           subtitle:
             '입점 중개사가 매물 광고를 등록 · 결제하고 성과를 확인하는 전용 대시보드 홈 화면 전면 개편 작업',
