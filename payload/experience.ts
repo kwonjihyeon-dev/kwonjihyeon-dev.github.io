@@ -96,7 +96,7 @@ const experience: IExperience.Payload = {
           title: 'React 기반 서비스 초기 구조 설계 및 성능 최적화',
           subtitle: '건물 관리 플랫폼 "오피스너" 초기 세팅부터 운영 안정화까지 전담',
           descriptions: [
-            'Code Splitting, 외부 스크립트 호출 순서 변경으로 Lighthouse 점수 평균 70점대 → 87점 상향시켜 성능 최적화에 기여',
+            'Code Splitting, 외부 스크립트 호출 순서 변경으로 Lighthouse 점수 평균 70점대 → 87점으로 상향시켜 성능 최적화에 기여',
             'GitHub Actions 기반 배포 파이프라인 구성으로 배포 자동화 환경 구축',
           ],
           skill: ['React', 'GitHub Actions', 'Lighthouse'],
@@ -104,7 +104,7 @@ const experience: IExperience.Payload = {
         {
           title: 'Data Fetching 병목 현상 개선',
           descriptions: [
-            'useSuspenseQuery 사용 시 컴포넌트 트리 상단에서 모든 API 호출을 대기하며 발생하는 waterfall 현상을 확인하여 API 호출 책임을 각 컴포넌트로 위임하는 구조로 재설계하고 Suspense 경계 재배치를 통해 네트워크 병렬성 확보',
+            'tanstack-query와 Suspense를 함께 쓰는 환경에서 여러 쿼리를 호출하면 발생하는 waterfall 현상을 확인, 컴포넌트를 원자 단위로 분리하고 개별 Suspense를 적용해 병렬 요청으로 개선',
           ],
           skill: ['React Suspense', 'Tanstack Query'],
         },
