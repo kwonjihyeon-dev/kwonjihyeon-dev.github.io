@@ -19,6 +19,11 @@
     max-width: 75% !important;
   }
 
+  /* 리버블(오피스너) 헤더가 페이지 경계에 걸리지 않도록 아래로 밀어낸다 */
+  .print-push-down {
+    margin-top: 4rem;
+  }
+
   /* md 정렬 유틸리티 유지 */
   .text-md-right {
     text-align: right !important;

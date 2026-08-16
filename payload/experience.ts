@@ -100,6 +100,7 @@ const experience: IExperience.Payload = {
     {
       company: '리버블',
       project: '오피스너',
+      printClassName: 'print-push-down',
       endedAt: '2023-10',
       startedAt: '2022-07',
       positions: [

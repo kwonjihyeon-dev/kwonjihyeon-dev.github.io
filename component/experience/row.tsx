@@ -22,7 +22,7 @@ export default function ExperienceRow({
     : `${startedAtDate.toFormat(DATE_FORMAT)} ~ ${endedAtDate.toFormat(DATE_FORMAT)}`;
 
   return (
-    <div>
+    <div className={item.printClassName}>
       {index > 0 && <hr />}
       <Row>
         {/* 왼쪽: 회사명 + 재직 기간 */}

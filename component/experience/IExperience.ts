@@ -34,6 +34,14 @@ export declare namespace IExperience {
      */
     endedAt?: string;
 
+    /**
+     * ### 인쇄 보정용 클래스
+     *
+     * @description 값이 존재하면 해당 경력 행 루트에 클래스로 부여된다.
+     * `styles/print.css`의 `@media print` 규칙과 조합해 인쇄 시 위치를 보정할 때 사용한다.
+     */
+    printClassName?: string;
+
     /** ### (직장)수행한 직위/직책 포지션 정보 */
     positions: Position[];
   }
