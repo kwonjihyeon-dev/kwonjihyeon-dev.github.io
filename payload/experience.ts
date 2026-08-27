@@ -25,21 +25,30 @@ const experience: IExperience.Payload = {
           subtitle:
             '중개사가 매물 광고를 위해 광고 상품을 선택해 내 · 외부 채널로 전송하는 페이지 개편 및 테스트 자동화',
           descriptions: [
-            '서버 인증 · 데이터 조회 · HTML 생성 후 JS 로드까지 기다려야 하는 레거시(PHP/Laravel) 페이지를 신규 Next.js(SSR/RSC)로 이관 → **TTFB 950ms → 200ms(-79%), LCP 3.5s → 2.3s, 용량 4.1MB → 1.7MB(-59%)** 개선',
+            '레거시(PHP/Laravel) 페이지를 신규 Next.js(SSR/RSC)로 이관 → **TTFB 950ms → 200ms(-79%), LCP 3.5s → 2.3s, 용량 4.1MB → 1.7MB(-59%)** 개선',
             '기능을 바꿀 때마다 기존 동작이 깨지거나 운영 CS가 인입되던 문제를 방지하고자 **핵심 플로우(매물 등록 · 광고 전송)를 자동 검증하는 Playwright 기반 E2E QA 자동화 환경을 구축**',
             '코드의 변경에 맞춰 직접 테스트를 갱신하지 않으면 검증이 누락되는 문제를 해소하고자, **LLM이 연관 코드의 diff를 분석해 테스트 갱신 · 추가하고 PR까지 생성**하는 파이프라인을 구성',
             '광고 전송 시 사용자가 입력하는 조건들의 조합을 E2E만으로는 모두 검증할 수 없어, **단위 · 통합 테스트(Vitest, 179케이스)를 설계 · 작성**해 정책 변경 시 회귀를 코드 레벨에서 방어',
           ],
-          skill: ['Next.js', 'TypeScript', 'AWS Bedrock', 'Playwright', 'Vitest'],
+          skill: [
+            'Next.js',
+            'TypeScript',
+            'Zustand',
+            'AWS Bedrock',
+            'Playwright',
+            'Vitest',
+            'Lighthouse',
+          ],
         },
         {
           title: '중개사 전용 관리 대시보드(B2B) 홈 개편 · Next.js SSR/RSC 마이그레이션',
           subtitle:
             '입점 중개사가 매물 광고를 등록 · 결제하고 성과를 확인하는 전용 대시보드 홈 화면 전면 개편 작업',
           descriptions: [
-            '레거시 Vue/Laravel 구조로 인증 · JS 다운로드 · 실행 · 데이터 페칭 이후에 화면이 렌더되는 홈 화면을 Next.js SSR/RSC로 재구축',
-            'SSR로 초기 HTML을 확보하고 번들 축소 · 이미지 · 폰트 최적화와 진입 시 필요한 7종 데이터의 서버 컴포넌트 병렬 prefetch를 적용해 초기 로딩 최적화',
-            '**Lighthouse Performance 68 → 96, 페이지 용량 4.8MB → 2.0MB(-58%), LCP 3.1s → 1.0s(-68%) 개선**',
+            '레거시(Vue/Laravel) 홈 화면을 Next.js SSR/RSC로 재구축 → **LCP 3.1s → 1.0s(-68%), TTI 4.9s → 1.0s(-80%), Lighthouse Performance 68 → 96, 페이지 용량 4.8MB → 2.0MB(-58%)** 개선',
+            '초기 다운로드 용량과 메인 스레드를 동시에 점유하던 서드파티 스크립트를 정리 — 채널톡 SDK는 idle 시점에, GPT(Google Publisher Tag) 광고는 lazyOnload로 지연시키고 사용되지 않는 네이버 지도 전역 스크립트 제거 · 폰트 woff2 전환',
+            '초기 렌더에 필요한 7개 prefetch가 유저 인증 이후로 직렬 실행되던 것을 서버 컴포넌트에서 병렬 실행하도록 재구성',
+            '홈 진입 시 노출되는 공지 · 마케팅 팝업의 이미지가 LCP 저하 원인 중 하나임을 확인하고, 서버에서 prefetch한 이미지 URL을 preload해 팝업 노출 전에 내려받도록 변경',
           ],
           skill: ['Next.js', 'Tanstack Query', 'Zustand', 'TypeScript', 'Lighthouse'],
         },
