@@ -33,7 +33,7 @@ const project: IProject.Payload = {
       descriptions: [
         {
           content:
-            'Hash / History API 기반 라우터, Observer 패턴 상태 관리, 컴포넌트 라이프 사이클(create/mount/unmount)을 직접 설계',
+            'History API 기반 SPA 라우터, Observer 패턴 상태 관리, 페이지 수명주기(create/mount/unmount)와 이벤트 위임을 직접 구현',
         },
       ],
     },

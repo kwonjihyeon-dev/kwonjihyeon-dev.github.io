@@ -90,7 +90,7 @@ const experience: IExperience.Payload = {
           descriptions: [
             '6개 프로젝트가 스타일 값을 각자 하드코딩 · 개별 관리해 토큰 변경 시 수동 동기화와 불일치가 반복되던 문제를 해결하고자, Figma 토큰을 @tokens-studio/sd-transforms + Style Dictionary로 변환해 환경별 출력물(TailwindCSS, SCSS)을 자동 생성하는 파이프라인 구축',
             'Figma 토큰 변경만으로 6개 프로젝트 스타일이 일괄 반영되어, 수동 동기화 작업과 스타일 불일치 제거',
-            '디자인 시스템 UI 컴포넌트 일부를 분담 구현하고 Storybook으로 문서화, 프론트 4명 · 디자이너 3명 협업 환경에서 재사용성 · 일관성 확보에 기여',
+            '디자인 시스템 UI 컴포넌트 일부를 분담 구현하고 Storybook으로 문서화, 재사용성 · 일관성 확보에 기여',
           ],
           skill: ['GitHub Actions', 'TailwindCSS', 'SCSS', 'Style Dictionary', 'Storybook'],
         },

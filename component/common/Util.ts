@@ -16,16 +16,15 @@ enum LUXON_DATE_FORMAT {
 function getFormattingDuration(from: DateTime, to: DateTime = DateTime.local()) {
   const log = debug('Util:getFormattingDuration');
 
-  // 햇수 계산을 위해 month에 1개월 추가
-  const diff = to.plus({ month: 1 }).diff(from, ['years', 'months']);
+  const diff = to.diff(from, ['years', 'months']);
 
   log(diff.milliseconds, diff.get('years'), diff.get('months'));
 
   // 기간 포맷 결정
   let format;
-  if (diff.years > 0 && diff.months === 0) {
+  if (diff.years > 0 && Math.floor(diff.months) === 0) {
     format = LUXON_DATE_FORMAT.DURATION_KINDNESS_ONLY_YEAR;
-  } else if (diff.years === 0 && diff.months > 0) {
+  } else if (diff.years === 0 && Math.floor(diff.months) > 0) {
     // 1년 미만이면 개월만 표시
     format = LUXON_DATE_FORMAT.DURATION_KINDNESS_ONLY_MONTH;
   } else {
