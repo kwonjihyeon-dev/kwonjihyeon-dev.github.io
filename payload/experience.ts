@@ -132,6 +132,17 @@ const experience: IExperience.Payload = {
         },
       ],
     },
+    {
+      company: '인천공항운영서비스',
+      startedAt: '2015-07',
+      endedAt: '2021-05',
+      positions: [
+        {
+          title: '여객 안내',
+          descriptions: ['인천국제공항 여객 안내 업무 · 자회사 전환 과정에서 소속 회사 2회 변경'],
+        },
+      ],
+    },
   ],
 };
 

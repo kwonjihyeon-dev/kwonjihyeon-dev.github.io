@@ -88,7 +88,7 @@ function createSkillKeywords(skill?: string[]) {
     return null;
   }
   return (
-    <li>
+    <li className="print-skill-row">
       <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem' }}>
         <strong>Skill</strong>
         {skill.map((keyword, index) => (

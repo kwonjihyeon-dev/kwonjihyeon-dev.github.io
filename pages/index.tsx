@@ -29,8 +29,8 @@ function Resume() {
         <Profile.Component payload={Payload.profile} />
         <Introduce.Component payload={Payload.introduce} />
         <Experience.Component payload={Payload.experience} />
-        <Skill.Component payload={Payload.skill} />
         <Project.Component payload={Payload.project} />
+        <Skill.Component payload={Payload.skill} />
         <Education.Component payload={Payload.education} />
         {/*
         <OpenSource.Component payload={Payload.openSource} />

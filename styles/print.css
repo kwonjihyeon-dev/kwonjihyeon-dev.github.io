@@ -19,6 +19,17 @@
     max-width: 75% !important;
   }
 
+  /* EXPERIENCE 헤더와 소개글 사이 간격 축소 (화면 3rem → 인쇄 1.5rem) */
+  .print-experience {
+    margin-top: 1.5rem !important;
+  }
+
+  /* Skill 뱃지 줄이 앞 불릿과 떨어져 다음 페이지 첫 줄에 홀로 남지 않도록 */
+  .print-skill-row {
+    break-before: avoid;
+    page-break-before: avoid;
+  }
+
   /* 리버블(오피스너) 헤더가 페이지 경계에 걸리지 않도록 아래로 밀어낸다 */
   .print-push-down {
     margin-top: 4rem;

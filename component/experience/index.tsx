@@ -20,7 +20,7 @@ export const Experience = {
 
 function Component({ payload }: PropsWithChildren<{ payload: Payload }>) {
   return (
-    <div className="mt-5">
+    <div className="mt-5 print-experience">
       <EmptyRowCol>
         <Row>
           <Col>
