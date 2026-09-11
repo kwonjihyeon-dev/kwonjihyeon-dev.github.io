@@ -58,9 +58,9 @@ export default function ExperienceRow({
           )}
           {item.positions.map((position, posIndex) => (
             <div key={posIndex.toString()} className={posIndex > 0 ? 'mt-4' : ''}>
-              <div style={Style.positionTitle}>{position.title}</div>
+              {position.title && <div style={Style.positionTitle}>{position.title}</div>}
               {position.subtitle && <div style={Style.positionSubtitle}>{position.subtitle}</div>}
-              <ul className="pt-2">
+              <ul className={position.title || position.subtitle ? 'pt-2' : 'pt-0 mb-0'}>
                 {position.descriptions.map((description, descIndex) => (
                   <li key={descIndex.toString()}>{renderDescription(description)}</li>
                 ))}

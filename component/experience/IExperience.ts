@@ -47,8 +47,12 @@ export declare namespace IExperience {
   }
 
   export interface Position {
-    /** ### (직장)프로젝트 명 */
-    title: string;
+    /**
+     * ### (직장)프로젝트 명
+     *
+     * @description 값이 없으면 제목 없이 설명 목록만 표시된다.
+     */
+    title?: string;
 
     /**
      * ### (직장)프로젝트 부제/설명
