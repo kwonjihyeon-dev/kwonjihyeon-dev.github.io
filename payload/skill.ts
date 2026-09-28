@@ -20,14 +20,28 @@ const Styling: ISkill.Skill = {
   items: ['TailwindCSS', 'SCSS', 'CSS-in-JS', 'Style Dictionary'],
 };
 
+const Testing: ISkill.Skill = {
+  category: 'Testing',
+  items: ['Playwright', 'Vitest', 'Storybook'],
+};
+
 const Etc: ISkill.Skill = {
   category: 'Etc',
-  items: ['Turborepo', 'pnpm', 'yarn', 'GitHub Actions', 'FSD', 'ESlint'],
+  items: [
+    'Turborepo',
+    'pnpm',
+    'yarn',
+    'GitHub Actions',
+    'FSD',
+    'ESLint',
+    'AWS Bedrock',
+    'Claude Code',
+  ],
 };
 
 const skill: ISkill.Payload = {
   disable: false,
-  skills: [Languages, Frameworks, Data, Styling, Etc],
+  skills: [Languages, Frameworks, Data, Styling, Testing, Etc],
 };
 
 export default skill;

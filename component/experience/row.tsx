@@ -57,9 +57,18 @@ export default function ExperienceRow({
             <h4 style={{ ...Style.periodMain, marginBottom: '1rem' }}>{item.project}</h4>
           )}
           {item.positions.map((position, posIndex) => (
-            <div key={posIndex.toString()} className={posIndex > 0 ? 'mt-4' : ''}>
-              {position.title && <div style={Style.positionTitle}>{position.title}</div>}
-              {position.subtitle && <div style={Style.positionSubtitle}>{position.subtitle}</div>}
+            <div
+              key={posIndex.toString()}
+              className={`print-position${posIndex > 0 ? ' mt-4' : ''}`}
+            >
+              {(position.title || position.subtitle) && (
+                <div className="print-position-header">
+                  {position.title && <div style={Style.positionTitle}>{position.title}</div>}
+                  {position.subtitle && (
+                    <div style={Style.positionSubtitle}>{position.subtitle}</div>
+                  )}
+                </div>
+              )}
               <ul className={position.title || position.subtitle ? 'pt-2' : 'pt-0 mb-0'}>
                 {position.descriptions.map((description, descIndex) => (
                   <li key={descIndex.toString()}>{renderDescription(description)}</li>

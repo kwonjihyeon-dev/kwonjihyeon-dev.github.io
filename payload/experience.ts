@@ -9,19 +9,18 @@ const experience: IExperience.Payload = {
       startedAt: '2023-10',
       positions: [
         {
-          title: '중개사 전용 관리 대시보드(B2B) 홈 개편 · Next.js SSR/RSC 마이그레이션',
-          subtitle:
-            '입점 중개사가 매물 광고를 등록 · 결제하고 성과를 확인하는 전용 대시보드 홈 화면 전면 개편 작업',
+          title: 'HLS 기반 숏폼 영상 피드 신규 구축 및 렌더링 성능 최적화',
+          subtitle: '모바일웹 매물 상세페이지에서 진입하는 풀스크린 영상 피드 신규 개발',
           descriptions: [
-            '레거시(Vue/Laravel) 홈 화면을 Next.js로 재구축 → **LCP 3.1s → 1.0s(-68%), TTI 4.9s → 1.0s(-80%), Lighthouse Performance · Accessibility 68 → 97, 페이지 용량 4.8MB → 2.0MB(-58%)** 개선',
-            '초기 다운로드 용량과 메인 스레드를 동시에 점유하던 서드파티 스크립트를 정리 — 채널톡 SDK는 idle 시점에, GPT(Google Publisher Tag) 광고는 lazyOnload로 지연시키고 사용되지 않는 네이버 지도 전역 스크립트 제거 · 폰트 woff2 전환',
-            '초기 렌더에 필요한 7개 prefetch가 유저 인증 이후로 직렬 실행되던 것을 서버 컴포넌트에서 병렬 실행하도록 재구성',
-            '홈 진입 시 노출되는 공지 · 마케팅 팝업의 이미지가 LCP 저하 원인 중 하나임을 확인하고, 서버에서 prefetch한 이미지 URL을 preload해 팝업 노출 전에 내려받도록 변경',
+            '스와이프 즉시 영상이 재생되어야 하는 숏폼 특성상 앞뒤 영상 1장을 미리 받아두고, 뷰포트 밖에 위치한 영상은 그리지 않도록 처리',
+            'Safari에서 스와이프 시 직전 영상이 상단에 걸린 채 멈추는 문제를 Timeline으로 레이어 합성(composite) 단계로 특정해 수정 → **슬라이드 중 화면 정지 165ms → 0, 드래그 중 414ms → 41ms, 레이어 합성 351ms → 64ms, 32 → 38fps**',
+            '드래그마다 피드 전체가 리렌더되던 것을 memo로 차단해 **초당 101회 → 9회**, 영상 진행 시간을 알려주는 프로그레스바는 state 대신 DOM 직접 갱신으로 바꿔 **리렌더 없이 처리**',
+            'hls.js가 영상 재생 준비 단계에서 브라우저 자막 트랙을 전부 비우는 로직을 소스 코드에서 확인하고, 네이티브 자막 API 대신 VTT 파일을 파싱해 렌더하도록 구현',
           ],
-          skill: ['Next.js', 'Tanstack Query', 'Zustand', 'TypeScript', 'Lighthouse'],
+          skill: ['Next.js', 'TypeScript', 'TanStack Query', 'Jotai', 'hls.js', 'Vitest'],
         },
         {
-          title: '중개사 광고 전송 화면 마이그레이션 및 E2E · LLM 기반 QA 자동화 구축',
+          title: '중개사 매물 광고 전송 화면 마이그레이션 및 E2E · LLM 기반 QA 자동화 구축',
           subtitle:
             '중개사가 매물 광고를 위해 광고 상품을 선택해 내 · 외부 채널로 전송하는 페이지 개편 및 테스트 자동화',
           descriptions: [
@@ -42,6 +41,18 @@ const experience: IExperience.Payload = {
           ],
         },
         {
+          title: '중개사 전용 관리 대시보드(B2B) 홈 개편 · Next.js SSR/RSC 마이그레이션',
+          subtitle:
+            '입점 중개사가 매물 광고를 등록 · 결제하고 조회 · 문의 · 찜 실적을 차트로 확인하는 전용 대시보드 홈 화면 전면 개편 작업',
+          descriptions: [
+            '레거시(Vue/Laravel) 홈 화면을 Next.js로 재구축 → **LCP 3.1s → 1.0s(-68%), TTI 4.9s → 1.0s(-80%), Lighthouse Performance · Accessibility 68 → 97, 페이지 용량 4.8MB → 2.0MB(-58%)** 개선',
+            '초기 다운로드 용량과 메인 스레드를 동시에 점유하던 서드파티 스크립트를 정리 — 채널톡 SDK는 idle 시점에, GPT(Google Publisher Tag) 광고는 lazyOnload로 지연시키고 사용되지 않는 네이버 지도 전역 스크립트 제거 · 폰트 woff2 전환',
+            '초기 렌더에 필요한 7개 prefetch가 유저 인증 이후로 직렬 실행되던 것을 서버 컴포넌트에서 병렬 실행하도록 재구성',
+            '홈 진입 시 노출되는 공지 · 마케팅 팝업의 이미지가 LCP 저하 원인 중 하나임을 확인하고, 서버에서 prefetch한 이미지 URL을 preload해 팝업 노출 전에 내려받도록 변경',
+          ],
+          skill: ['Next.js', 'Tanstack Query', 'Zustand', 'TypeScript', 'Lighthouse', 'chart.js'],
+        },
+        {
           title: '서버 드리븐 UI(SDUI) 기반 팝업 시스템 제안 · 구축',
           subtitle: '중개사 전용 관리 대시보드에 노출되는 팝업 작업에 대한 비효율 개선',
           descriptions: [
@@ -50,6 +61,16 @@ const experience: IExperience.Payload = {
             '기획파트가 어드민에 입력만으로 팝업을 제어할 수 있게 되어, 긴급 공지 · 마케팅 대응 등을 **배포 단위(1~2일)에서 분 단위로 단축**',
           ],
           skill: ['Next.js', 'Tanstack Query', 'TypeScript'],
+        },
+        {
+          title: '모바일웹 개인회원 매물 광고 퍼널 개선',
+          subtitle:
+            '사용자가 매물을 피터팬 · 네이버페이 부동산 · 네이버 카페 등 내 · 외부 채널에 광고할 수 있는 기능',
+          descriptions: [
+            '매물 광고 전송 퍼널을 개편해 **네이버 카페 전송 성공률 91.7%, 결제 관련 CS 인입 0건** 달성에 기여',
+            '개선 과정에서 뒤로가기 · 재방문 시 입력 데이터가 유실되던 문제를, 파편화된 IndexedDB 접근 로직이 원인임을 확인 → IndexedDB 접근을 단일 Class로 캡슐화하고 Vuex store에서만 호출하도록 단일화해 데이터 보존 · 일관성 확보',
+          ],
+          skill: ['IndexedDB', 'Vue', 'Vuex'],
         },
         {
           title: 'WebView · 모바일웹 관심 매물 관리 기능 개발 및 SSR 초기 로드 개선',
@@ -63,17 +84,6 @@ const experience: IExperience.Payload = {
           skill: ['Next.js', 'Tanstack Query', 'Zustand', 'TypeScript'],
         },
         {
-          title: 'HLS 기반 숏폼 영상 피드 구축 및 렌더링 성능 최적화',
-          subtitle: '모바일 웹 매물 상세페이지에서 진입하는 풀스크린 영상 피드 신규 개발',
-          descriptions: [
-            '스와이프 즉시 영상이 재생되어야 하는 숏폼 특성상 앞뒤 영상 1장을 미리 받아두고, 뷰포트 밖에 위치한 영상은 그리지 않도록 처리',
-            'Safari에서 스와이프 시 직전 영상이 상단에 걸린 채 멈추는 문제를 Safari Timeline에서 렌더링 병목이 JS가 아니라 레이어 합성(JS의 6배)임을 확인하고 수정 → **슬라이드 중 화면 정지 165ms → 0, 드래그 중 414ms → 41ms, 레이어 합성 351ms → 64ms, 32 → 38fps**',
-            '드래그마다 피드 전체가 리렌더되던 것을 memo로 차단해 **초당 101회 → 9회**, 영상 진행 시간을 알려주는 프로그레스바는 state 대신 DOM 직접 갱신으로 바꿔 **리렌더 없이 처리**',
-            'hls.js가 영상 재생 준비 단계에서 브라우저 자막 트랙을 전부 비우는 로직을 소스 코드에서 확인하고, 네이티브 자막 API 대신 VTT 파일을 파싱해 렌더하도록 구현',
-          ],
-          skill: ['Next.js', 'TypeScript', 'TanStack Query', 'Jotai', 'hls.js', 'Vitest'],
-        },
-        {
           title: '디자인 토큰 자동화 파이프라인 및 디자인 시스템 구축',
           subtitle:
             'React/Vue/PHP 6개 프로젝트가 사용하는 디자인 토큰을 Figma 변경만으로 자동 반영되도록 파이프라인 구축',
@@ -84,33 +94,23 @@ const experience: IExperience.Payload = {
           ],
           skill: ['GitHub Actions', 'TailwindCSS', 'SCSS', 'Style Dictionary', 'Storybook'],
         },
-        {
-          title: '모바일웹 개인회원 매물 광고 퍼널 개선',
-          subtitle:
-            '사용자가 매물을 피터팬 · 네이버페이 부동산 · 네이버 카페 등 내 · 외부 채널에 광고할 수 있는 기능',
-          descriptions: [
-            '매물 광고 전송 퍼널을 개선해 **네이버 카페 전송 성공률 91.7%, 결제 관련 CS 인입 0건** 등 팀 성과에 기여',
-            '개선 과정에서 뒤로가기 · 재방문 시 입력 데이터가 유실되던 문제를, 파편화된 IndexedDB 접근 로직이 원인임을 확인 → IndexedDB 접근을 단일 Class로 캡슐화하고 Vuex store에서만 호출하도록 단일화해 데이터 보존 · 일관성 확보',
-          ],
-          skill: ['IndexedDB', 'Vue', 'Vuex'],
-        },
         // {
-        //   title: 'AI 사주·풍수 매물 분석 (PoC)',
-        //   subtitle:
-        //     '생년월일 · 출생시간 · 성별로 사주 오행을 분석해 이용자에게 잘 맞는 매물 · 동네를 추천하는 서비스',
-        //   descriptions: [
-        //     'AI 응답 타이핑 UI를 useRef DOM 직접 조작으로 구현해 리렌더 회피',
-        //     '검색 API 응답을 chunk로 받아 첫 50건 즉시 노출, 나머지는 IntersectionObserver 점진 렌더링 처리, 검색어 변경 시 AbortController로 이전 요청 취소 처리',
-        //     '낮은 CTR(0.06%)에 대한 원인을 파악하기 위해 진입 배너 노출 위치에 대한 A/B 테스트를 진행하고 사용자 액션 분석을 위해 "노출 부족 vs 인지 후 미클릭"으로 이벤트 추가 제안 및 측정',
-        //   ],
-        //   skill: ['Next.js', 'Tanstack Query', 'Zustand', 'TypeScript'],
+        // title: 'AI 사주·풍수 매물 분석 (PoC)',
+        // subtitle:
+        // '생년월일 · 출생시간 · 성별로 사주 오행을 분석해 이용자에게 잘 맞는 매물 · 동네를 추천하는 서비스',
+        // descriptions: [
+        // 'AI 응답 타이핑 UI를 useRef DOM 직접 조작으로 구현해 리렌더 회피',
+        // '검색 API 응답을 chunk로 받아 첫 50건 즉시 노출, 나머지는 IntersectionObserver 점진 렌더링 처리, 검색어 변경 시 AbortController로 이전 요청 취소 처리',
+        // '낮은 CTR(0.06%)에 대한 원인을 파악하기 위해 진입 배너 노출 위치에 대한 A/B 테스트를 진행하고 사용자 액션 분석을 위해 "노출 부족 vs 인지 후 미클릭"으로 이벤트 추가 제안 및 측정',
+        // ],
+        // skill: ['Next.js', 'Tanstack Query', 'Zustand', 'TypeScript'],
         // },
       ],
     },
     {
       company: '리버블',
       project: '오피스너',
-      printClassName: 'print-push-down',
+      printClassName: 'print-keep-together',
       endedAt: '2023-10',
       startedAt: '2022-07',
       positions: [
@@ -134,6 +134,7 @@ const experience: IExperience.Payload = {
     },
     {
       company: '인천공항운영서비스',
+      printClassName: 'print-keep-together',
       startedAt: '2015-07',
       endedAt: '2021-05',
       positions: [
