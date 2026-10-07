@@ -36,6 +36,7 @@ const Etc: ISkill.Skill = {
     'ESLint',
     'AWS Bedrock',
     'Claude Code',
+    'Amplitude',
   ],
 };
 

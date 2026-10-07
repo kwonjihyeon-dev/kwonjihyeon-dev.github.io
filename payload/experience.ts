@@ -10,14 +10,22 @@ const experience: IExperience.Payload = {
       positions: [
         {
           title: 'HLS 기반 숏폼 영상 피드 신규 구축 및 렌더링 성능 최적화',
-          subtitle: '모바일웹 매물 상세페이지에서 진입하는 풀스크린 영상 피드 신규 개발',
+          subtitle:
+            '모바일웹 매물 상세페이지에서 진입하는 풀스크린 영상 피드 신규 개발 · Amplitude A/B 실험 연동',
           descriptions: [
             '스와이프 즉시 영상이 재생되어야 하는 숏폼 특성상 앞뒤 영상 1장을 미리 받아두고, 뷰포트 밖에 위치한 영상은 그리지 않도록 처리',
             'Safari에서 스와이프 시 직전 영상이 상단에 걸린 채 멈추는 문제를 Timeline으로 레이어 합성(composite) 단계로 특정해 수정 → **슬라이드 중 화면 정지 165ms → 0, 드래그 중 414ms → 41ms, 레이어 합성 351ms → 64ms**',
             '드래그마다 피드 전체가 리렌더되던 것을 memo로 차단해 **초당 101회 → 9회**, 영상 진행 시간을 알려주는 프로그레스바는 state 대신 DOM 직접 갱신으로 바꿔 **리렌더 없이 처리**',
-            'hls.js가 영상 재생 준비 단계에서 브라우저 자막 트랙을 전부 비우는 로직을 소스 코드에서 확인하고, 네이티브 자막 API 대신 VTT 파일을 파싱해 렌더하도록 구현',
           ],
-          skill: ['Next.js', 'TypeScript', 'TanStack Query', 'Jotai', 'hls.js', 'Vitest'],
+          skill: [
+            'Next.js',
+            'TypeScript',
+            'TanStack Query',
+            'Jotai',
+            'hls.js',
+            'Vitest',
+            'Amplitude',
+          ],
         },
         {
           title: '중개사 매물 광고 전송 화면 마이그레이션 및 E2E · LLM 기반 QA 자동화 구축',
@@ -57,7 +65,7 @@ const experience: IExperience.Payload = {
           subtitle: '중개사 전용 관리 대시보드에 노출되는 팝업 작업에 대한 비효율 개선',
           descriptions: [
             '중개사 전용 관리 대시보드에 노출되는 팝업이 매번 기획 → 디자인 → 개발 → 검수 → 배포 과정이 반복되던 문제를 직접 제안해 채택 · 적용',
-            '클라이언트에서는 서버가 내려준 JSON을 컴포넌트 타입별로 동적 렌더링하도록 구현, 노출 판정은 서버에 위임하는 방식으로 변경',
+            '팝업 스키마(노출 조건 · 이미지 · 버튼 · 레이아웃)를 **직접 설계해 서버 개발자와 조율**하고, 클라이언트는 JSON을 컴포넌트 타입별로 동적 렌더되도록 구현',
             '기획파트가 어드민에 입력만으로 팝업을 제어할 수 있게 되어, 긴급 공지 · 마케팅 대응 등을 **배포 단위(1~2일)에서 분 단위로 단축**',
           ],
           skill: ['Next.js', 'Tanstack Query', 'TypeScript'],

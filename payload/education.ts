@@ -6,7 +6,7 @@ const education: IEducation.Payload = {
   list: [
     {
       title: '호원대학교',
-      subTitle: '학사 졸업',
+      subTitle: '항공서비스학과 학사 졸업',
       startedAt: '2012-03',
       endedAt: '2016-02',
     },
